@@ -27,6 +27,8 @@ def main():
     # https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/
     aToken = (os.environ['aToken'])
 
+    print("Testando" (os.environ['aToken']))
+
     # Create a configuration object
     aConfiguration = client.Configuration()
 
