@@ -19,13 +19,13 @@ The communication is secured with the use of Bearer token.
 """
 
 from kubernetes import client, config
-
+import os
 
 def main():
     # Define the bearer token we are going to use to authenticate.
     # See here to create the token:
     # https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/
-    aToken = "eyJhbGciOiJSUzI1NiIsImtpZCI6IktEMURhWUVYWm1ELVZHM3VSRmlWYURiZW9vaUpieTZXVUNfYjNhaFhtUDQifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXNhLXRva2VuIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwYTAyZTdmNS02NmJmLTRiYzItYmY1NS0xZWE3ZTFjMWMzNTYiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YWRtaW4tdXNlciJ9.aIUsXZS0uQGF_Jq0v8Z1Kb-0bBLk0_FBaFipMMmda4UU77wdMCsnUI4XVnbrTqo8PqCD1TSm3i_W-siBU8IqqQe_AyTKKk6PN_h3Nzos0VwI2blCCSnw64-aluu-QQSv4qAw0AY9FZCb779NlCprGdeDzCzMtZn4eygOGPiEgBjam0Xu4nJKdM9m7EVfKCHuqEovnD4VvnKJNNMyqxvx_P36wWfQ1eTGRtN87vTc-UH1uKVu68hBfzzAgV08UMVfFwveUmcyACOLOH-6GHcRuToGTsJ3X5uV2YVHSVInWwgzQ1IMbsKqEMuNRAqJB0isttLAAZHJIsec80dSi-M4UA"
+    aToken = (os.environ['aToken'])
 
     # Create a configuration object
     aConfiguration = client.Configuration()
@@ -51,6 +51,8 @@ def main():
     v1 = client.CoreV1Api(aApiClient)
     print("Listing pods with their IPs:")
     ret = v1.list_pod_for_all_namespaces(watch=False)
+
+    
     for i in ret.items:
         print(f"{i.status.pod_ip}\t{i.metadata.namespace}\t{i.metadata.name}")
 
