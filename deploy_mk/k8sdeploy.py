@@ -17,9 +17,8 @@ import re
 from os import path
 import yaml
 
-# token=(os.environ['TOKEN_K8S'])
-print("TESTANDO A VARIAVEL", (os.environ['TOKEN']))
-print("TOKEN")
+token=(os.environ['TOKEN_K8S'])
+print(token)
 
 # Configuration = client.Configuration()
 # Configuration.host = "https://192.168.0.50:6443"
