@@ -20,11 +20,11 @@ import yaml
 # token=(os.environ['TOKEN_K8S'])
 print=(os.environ['TOKEN'])
 
-Configuration = client.Configuration()
-Configuration.host = "https://192.168.0.50:6443"
-Configuration.verify_ssl = False
-Configuration.api_key = {"authorization": "Bearer " + Token}
-ApiClient = client.ApiClient(Configuration)
+# Configuration = client.Configuration()
+# Configuration.host = "https://192.168.0.50:6443"
+# Configuration.verify_ssl = False
+# Configuration.api_key = {"authorization": "Bearer " + Token}
+# ApiClient = client.ApiClient(Configuration)
 
 
 # GITHUB_WORKSPACE =  os.environ.get('GITHUB_WORKSPACE')
@@ -33,16 +33,16 @@ ApiClient = client.ApiClient(Configuration)
 # The default credential first checks environment variables for configuration as described above.
 # If environment configuration is incomplete, it will try managed identity.
 
-from kubernetes import client, config
+# from kubernetes import client, config
 
-# Configs can be set in Configuration class directly or using helper utility
-config.load_kube_config()
+# # Configs can be set in Configuration class directly or using helper utility
+# config.load_kube_config()
 
-v1 = client.CoreV1Api(ApiClient)
-print("Listing pods with their IPs:")
-ret = v1.list_pod_for_all_namespaces(watch=False)
-for i in ret.items:
-    print("%s\t%s\t%s" % (i.status.pod_ip, i.metadata.namespace, i.metadata.name))
+# v1 = client.CoreV1Api(ApiClient)
+# print("Listing pods with their IPs:")
+# ret = v1.list_pod_for_all_namespaces(watch=False)
+# for i in ret.items:
+#     print("%s\t%s\t%s" % (i.status.pod_ip, i.metadata.namespace, i.metadata.name))
 
 
 # with open(path.join(path.dirname(__file__), GITHUB_WORKSPACE + "/" + FILE_DEPLOYMENT)) as f:
