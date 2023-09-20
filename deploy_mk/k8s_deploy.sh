@@ -1,7 +1,7 @@
 eval $(minikube docker-env)
-pip install kubernetes
-pip install docker
+pip3 install kubernetes
+pip3 install docker
+pip3 install kubeconfig
 hostname
-# python ${GITHUB_ACTION_PATH}/teste.py
 kubectl get pods
 python3 ${GITHUB_ACTION_PATH}/k8sdeploy.py

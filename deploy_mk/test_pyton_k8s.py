@@ -4,6 +4,10 @@ import os
 # Classe subprocess para execução de comandos no SO
 import subprocess
 
+from kubeconfig import KubeConfig
+conf = KubeConfig()
+print(conf.view())
+
 # Classe do Kubernetes
 from kubernetes import config, client
 from kubernetes.client import Configuration
@@ -16,19 +20,19 @@ import re
 from os import path
 import yaml
 
-token=(os.environ['TOKEN_K8S'])
 
-
-GITHUB_WORKSPACE =  os.environ.get('GITHUB_WORKSPACE')
-FILE_DEPLOYMENT = os.environ.get('FILE_DEPLOYMENT')
+# GITHUB_WORKSPACE =  "/home/trinta"
+# FILE_DEPLOYMENT = os.environ.get('FILE_DEPLOYMENT')
 
 # The default credential first checks environment variables for configuration as described above.
 # If environment configuration is incomplete, it will try managed identity.
 
 from kubernetes import client, config
 
+SECRET=os.environ["KUBE"]
 # Configs can be set in Configuration class directly or using helper utility
-config.load_kube_config()
+print (SECRET)
+config.load_kube_config(os.environ["KUBE"])
 
 v1 = client.CoreV1Api()
 print("Listing pods with their IPs:")
