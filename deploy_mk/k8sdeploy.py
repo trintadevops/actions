@@ -17,7 +17,7 @@ import re
 from os import path
 import yaml
 
-token=(os.environ['TOKEN_K8S'])
+# token=(os.environ['TOKEN_K8S'])
 print=(os.environ['TOKEN'])
 
 Configuration = client.Configuration()
