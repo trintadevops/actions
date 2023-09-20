@@ -3,6 +3,7 @@
 import os
 # Classe subprocess para execução de comandos no SO
 import subprocess
+import base64
 
 # Classe do Kubernetes
 from kubernetes import config, client
@@ -17,6 +18,7 @@ from os import path
 import yaml
 
 token=(os.environ['TOKEN_K8S'])
+print=(os.environ['TOKEN'])
 
 Configuration = client.Configuration()
 Configuration.host = "https://192.168.0.50:6443"
