@@ -23,7 +23,7 @@ print(token)
 Configuration = client.Configuration()
 Configuration.host = "https://192.168.0.50:6443"
 Configuration.verify_ssl = False
-Configuration.api_key = {"authorization": "Bearer " + Token}
+Configuration.api_key = {"authorization": "Bearer " + token}
 ApiClient = client.ApiClient(Configuration)
 
 
