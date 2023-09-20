@@ -52,7 +52,7 @@ def main():
     # Do calls
     v1 = client.CoreV1Api(aApiClient)
     print("Listing pods with their IPs:")
-    ret = v1.list_pod_for_all_namespaces(watch=False)
+    ret = v1.list_pod_for_all_namespaces(watch=False, namespace=web)
 
     
     for i in ret.items:
