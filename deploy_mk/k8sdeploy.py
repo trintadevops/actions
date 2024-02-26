@@ -45,8 +45,8 @@ for i in ret.items:
     print("%s\t%s\t%s" % (i.status.pod_ip, i.metadata.namespace, i.metadata.name))
 
 
-# with open(path.join(path.dirname(__file__), GITHUB_WORKSPACE + "/" + FILE_DEPLOYMENT)) as f:
-#     dep = yaml.safe_load(f)
-#     k8s_apps_v1 = client.AppsV1Api()
-#     resp = k8s_apps_v1.create_namespaced_deployment(body=dep, namespace="default")
-#     print("Deployment created. status='%s'" % resp.metadata.name)
+with open(path.join(path.dirname(__file__), GITHUB_WORKSPACE + "/" + FILE_DEPLOYMENT)) as f:
+    dep = yaml.safe_load(f)
+    k8s_apps_v1 = client.AppsV1Api()
+    resp = k8s_apps_v1.create_namespaced_deployment(body=dep, namespace="default")
+    print("Deployment created. status='%s'" % resp.metadata.name)
