@@ -9,8 +9,8 @@ GITHUBWORKSPACE = os.environ.get('GITHUB_WORKSPACE')
 
 # build = client.images.build(path = GITHUBWORKSPACE, tag = 'core.harbor.domain/library/' + PODNAME)
 
-client.login(registry='registry.trintadevops.ddns.net', username='admin', password='Harbor12345')
-push = client.images.push('registry.trintadevops.ddns.net/library/' + PODNAME)
+client.login(registry='10.104.178.216', username='admin', password='Harbor12345')
+push = client.images.push('10.104.178.216/library/' + PODNAME)
 print(push)
 
 
