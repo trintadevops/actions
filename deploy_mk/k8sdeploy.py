@@ -27,8 +27,8 @@ Configuration.api_key = {"authorization": "Bearer " + token}
 ApiClient = client.ApiClient(Configuration)
 
 
-# GITHUB_WORKSPACE =  os.environ.get('GITHUB_WORKSPACE')
-# FILE_DEPLOYMENT = os.environ.get('FILE_DEPLOYMENT')
+GITHUB_WORKSPACE =  os.environ.get('GITHUB_WORKSPACE')
+FILE_DEPLOYMENT = os.environ.get('FILE_DEPLOYMENT')
 
 # The default credential first checks environment variables for configuration as described above.
 # If environment configuration is incomplete, it will try managed identity.
