@@ -9,8 +9,8 @@ PODNAME = os.environ.get('POD_NAME')
 
 # # build = client.images.build(path = GITHUBWORKSPACE, tag = 'harbor-portal.harbor.svc.cluster.local/library/' + PODNAME)
 
-client.login(registry='harbor-core.harbor.svc.cluster.local', username='admin', password='Harbor12345')
-push = client.images.push('harbor-core.harbor.svc.cluster.local/library/' + "quarkus-social")
+client.login(registry='harbor-core', username='admin', password='Harbor12345')
+push = client.images.push('harbor-core/library/' + "quarkus-social")
 print(push)
 
 
