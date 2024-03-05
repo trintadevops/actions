@@ -1,0 +1,11 @@
+name: 'Deploy Action'
+description: 'Build and Deploy PODs'
+runs:
+  using: 'composite'
+  steps:
+      - run: bash ${{ github.action_path }}/mvn_build.sh
+        shell: bash
+
+
+
+

@@ -6,7 +6,7 @@ echo "WORKSPACE: ${GITHUB_ACTION_PATH}"
 echo "USERNAME: ${USER}"
 echo "#############################################"
 sudo apt-get update
-sudo apt-get install python3-pip -y
+sudo apt-get install python3-pip maven -y
 pip3 install docker
 echo "############### FIM DA INSTALACAO DOS PACOTES #################"
 python3 ${GITHUB_ACTION_PATH}/docker_bp.py
