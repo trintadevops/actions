@@ -1,5 +1,5 @@
-name: 'Mini Kube Deploy Action'
-description: 'Deploy PODs on local Minikube'
+name: 'Deploy Action'
+description: 'Build and Deploy PODs'
 runs:
   using: 'composite'
   steps:
