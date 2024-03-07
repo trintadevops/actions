@@ -5,4 +5,6 @@ pip3 install docker
 pip3 install kubeconfig
 echo "############### INSTALACAO MAVEN WRAPER #################"
 mvn wrapper:wrapper
+./mvnw quarkus:build -DskipTests -D"quarkus.container-image.push=true" 
+
 # python3 ${GITHUB_ACTION_PATH}/k8sdeploy.py
